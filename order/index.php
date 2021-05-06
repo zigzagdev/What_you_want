@@ -1,13 +1,5 @@
-<?php include('../partials/menu.php'); ?>
 
-<html>
-<head>
- <title>Food Order Site</title>
-
- <link rel="stylesheet" href="../css/order.css">
-</head>
-
-<body>
+<?php include("partials/menu.php"); ?>
 
  <!--Main Section -->
 <div class="main">
@@ -37,5 +29,4 @@
  </div>
 </div>
  <!--Main Section -->
- </body>
-</html>
+<?php include("partials/footer.php");  ?>

@@ -5,5 +5,4 @@
     </div>
 </div>
 <!--footer Section -->
-</body>
-</html>
+
