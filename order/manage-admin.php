@@ -24,33 +24,42 @@
           <th>Actions</th>
         </tr>
 
-        <tr>
-         <td>1.</td>
-         <td>Matthew</td>
-         <td>Matt</td>
-         <td>
-          <a href="#" class="btn-secondary">Update Admin</a>
-          <a href="#" class="btn-danger">Delete Admin</a>
-         </td>
-        </tr>
-        <tr>
-         <td>2.</td>
-         <td>Matthew</td>
-         <td>Matt</td>
-          <td>
-           <a href="#" class="btn-secondary">Update Admin</a>
-           <a href="#" class="btn-danger">Delete Admin</a>
-          </td>
-        </tr>
-        <tr>
-         <td>3.</td>
-         <td>Matthew</td>
-         <td>Matt</td>
-        <td>
-         <a href="#" class="btn-secondary">Update Admin</a>
-         <a href="#" class="btn-danger">Delete Admin</a>
-        </td>
-        </tr>
+        <?php
+         $sql= "SELECT * FROM tbl_admin";
+         $rec= mysqli_query($connect, $sql);
+
+         if($rec==TRUE)
+          {
+            $rows= mysqli_num_rows($rec);
+
+            if($rows>0)
+             {
+               while($rows=mysqli_fetch_assoc($rec))
+                {
+                  $id=$rows['id'];
+                  $full_name=$rows['full_name'];
+                  $username=$rows['username'];
+                  $password=$rows['password'];
+                ?>
+              <tr>
+               <td><?php echo $id++; ?>. </td>
+               <td><?php echo $full_name; ?></td>
+               <td><?php echo $username; ?></td>
+               <td>
+                <a href="#" class="btn-secondary">Update Admin</a>
+                <a href="#" class="btn-danger">Delete Admin</a>
+                </td>
+              </tr>
+
+               <?php
+                }
+             }
+            else
+             {
+
+             }
+          }
+        ?>
 
        </table>
     </div>
