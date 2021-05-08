@@ -11,6 +11,17 @@
             echo $_SESSION['add'];
             unset($_SESSION['add']);
           }
+        if(isset($_SESSION['delete']))
+          {
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']);
+          }
+
+        if(isset($_SESSION['update']))
+          {
+            echo $_SESSION['update'];
+            unset($_SESSION['update']);
+          }
         ?>
         <br/><br/>
        <!---button--->
@@ -18,7 +29,7 @@
         <br/><br/><br/>
        <table class="tbl-full">
         <tr>
-          <th>M.O</th>
+          <th>O.N</th>
           <th>Full Name</th>
            <th>User Name</th>
           <th>Actions</th>
@@ -30,10 +41,12 @@
 
          if($rec==TRUE)
           {
-            $rows= mysqli_num_rows($rec);
+            $count = mysqli_num_rows($rec); // Function to get all the rows in database
 
-            if($rows>0)
-             {
+            $on=1;
+
+          if($count>0)
+            {
                while($rows=mysqli_fetch_assoc($rec))
                 {
                   $id=$rows['id'];
@@ -42,15 +55,14 @@
                   $password=$rows['password'];
                 ?>
               <tr>
-               <td><?php echo $id++; ?>. </td>
+               <td><?php echo $on++; ?>. </td>
                <td><?php echo $full_name; ?></td>
                <td><?php echo $username; ?></td>
                <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                <a href="#" class="btn-danger">Delete Admin</a>
+                <a href="<?php echo SITEURL; ?>/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
+                <a href="<?php echo SITEURL; ?>/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                 </td>
               </tr>
-
                <?php
                 }
              }
