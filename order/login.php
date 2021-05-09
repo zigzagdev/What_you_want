@@ -50,7 +50,7 @@
     if($count==1)
     {
         $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
-        $_SESSION['user'] = $username;
+        $_SESSION['user'] = $username;      //特定のユーザーがログアウトしてるかしてないかの確認の為に置いてる
         header('location:'.SITEURL.'/');
     }
     else
