@@ -20,7 +20,7 @@
                     $full_name = $row['full_name'];
                     $username = $row['username'];
                 } else {
-                    header('location:'.SITEURL. '/update-admin.php');
+                    header('location:'.SITEURL. '/order/update-admin.php');
                 }
             }
             ?>
@@ -69,12 +69,12 @@ if(isset($_POST['submit']))
     if($rec==true)
     {
         $_SESSION['update'] = "<div class='success'>Admin Updated Successfully.</div>";
-        header('location:'.SITEURL.'/manage-admin.php');
+        header('location:'.SITEURL.'/order/manage-admin.php');
     }
     else
     {
         $_SESSION['update'] = "<div class='error'>Failed to Delete Admin.</div>";
-        header('location:'.SITEURL.'/manage-admin.php');
+        header('location:'.SITEURL.'/order/manage-admin.php');
     }
 }
 ?>

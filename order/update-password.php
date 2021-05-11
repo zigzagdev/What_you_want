@@ -66,23 +66,23 @@
                  if($rec2==true)
                    {
                        $_SESSION['change-pwd'] = "<div class='success'>Password Changed Successfully. </div>";
-                       header('location:'.SITEURL.'/manage-admin.php');
+                       header('location:'.SITEURL.'/order/manage-admin.php');
                    }
                    else
                    {
                        $_SESSION['change-pwd'] = "<div class='error'>Failed to Change Password. </div>";
-                       header('location:'.SITEURL.'/manage-admin.php');
+                       header('location:'.SITEURL.'/order/manage-admin.php');
                    }
                }
                else {
                    $_SESSION['pwd-not-match'] = "<div class='error'>Password Did not Patch. </div>";
-                   header('location:' . SITEURL . '/manage-admin.php');
+                   header('location:' . SITEURL . '/order/manage-admin.php');
                }
            }
            else
            {
                $_SESSION['user-not-found'] = "<div class='error'>User Not Found. </div>";
-               header('location:'.SITEURL.'/manage-admin.php');
+               header('location:'.SITEURL.'/order/manage-admin.php');
            }
        }
    }

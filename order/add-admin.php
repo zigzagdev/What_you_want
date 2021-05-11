@@ -61,12 +61,12 @@ if(isset($_POST['submit']))
 
   if($rec==TRUE) {
       $_SESSION['add'] = "<div class='success'>Admin Added Successfully.</div>";
-      header("location:" . SITEURL . '/manage-admin.php');
+      header("location:" . SITEURL . '/order/manage-admin.php');
   }
   else
   {
       $_SESSION['add'] = "<div class='error'>Failed to Add Admin.</div>";
-      header("location:".SITEURL.'/add-admin.php');  //ページへのリダイレクトをif~else文にて行っている。
+      header("location:".SITEURL.'/order/add-admin.php');  //ページへのリダイレクトをif~else文にて行っている。
    }
  }
 
