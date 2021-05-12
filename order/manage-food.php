@@ -66,8 +66,8 @@
           <td><?php echo $featured; ?></td>
           <td><?php echo $active; ?></td>
          <td>
-          <a href="order/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update Food</a>
-          <a href="order/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">DeleteFood</a>
+          <a href="/order/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update Food</a>
+          <a href="/order/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">DeleteFood</a>
          </td>
       </tr>
       <?php
