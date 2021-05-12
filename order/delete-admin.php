@@ -10,11 +10,11 @@ $rec= mysqli_query($connect, $sql);
 if($rec==true)
  {
      $_SESSION['delete']="<div class='success'>Admin deleted.</div>";
-     header("location:".SITEURL.'/manage-admin.php');
+     header("location:".SITEURL.'/order/manage-admin.php');
  }
 else
  {
      $_SESSION['delete']="<div class='error'>Admin is not deleted</div>" ;
-     header("location:".SITEURL.'/manage-admin.php');
+     header("location:".SITEURL.'/order/manage-admin.php');
  }
 ?>
