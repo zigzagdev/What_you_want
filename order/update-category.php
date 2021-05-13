@@ -159,7 +159,7 @@
                 if($res2==true)
                 {
                     $_SESSION['update'] = "<div class='success'>Category Updated Successfully.</div>";
-                    header('location:/order/manage-category.php');
+                    header('location:'.SITEURL.'order/manage-category.php');
                 }
                 else
                 {
