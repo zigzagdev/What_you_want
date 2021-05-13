@@ -51,15 +51,14 @@
        <td>￥<?php echo $price; ?></td>
        <td>
         <?php
-          if($image_name="")
+          if($image_name=="")
            {
              echo "<div class='error'>Image not Added.</div>";
            }
           else
            {
         ?>
-             <img src="../images/food/<?php echo $image_name; ;?>" width="100px">
-              <?php var_dump($image_name);?>
+             <img src="../images/food/<?php echo $image_name; ?>" width="100px">
         <?php
            }
         ?>
