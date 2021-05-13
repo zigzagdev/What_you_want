@@ -53,7 +53,7 @@
         <br><br>
 
         <!-- Button to Add Admin -->
-        <a href="<?php echo SITEURL; ?>order/add-category.php" class="btn-primary">Add Category</a>
+        <a href="/order/add-category.php" class="btn-primary">Add Category</a>
 
         <br /><br /><br />
 
@@ -94,6 +94,7 @@
                             {
                                 ?>
                                 <img src="../images/category/<?php echo $image_name; ?>" width="100px" >
+
                                 <?php
                             }
                             else
