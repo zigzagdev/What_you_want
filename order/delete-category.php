@@ -20,10 +20,7 @@ include('../config/constants.php');
         }
       }
 
-       $sql="DELETE FROM tbl_category WHERE else
-       {
-        header('location:'.SITEURL.'/order/manage-category.php');
-       } id=$id";
+       $sql="DELETE FROM tbl_category WHERE id=$id";
        $rec=mysqli_query($connect,$sql);
 
      if($rec==true)
@@ -37,5 +34,8 @@ include('../config/constants.php');
         header('location:'.SITEURL.'/order/manage-category.php ');
        }
      }
-
+   else
+       {
+        header('location:'.SITEURL.'/order/manage-category.php');
+       }
 ?>

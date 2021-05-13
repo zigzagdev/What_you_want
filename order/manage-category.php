@@ -53,7 +53,7 @@
         <br><br>
 
         <!-- Button to Add Admin -->
-        <a href="/order/add-category.php" class="btn-primary">Add Category</a>
+        <a href="<?php echo SITEURL; ?>order/add-category.php" class="btn-primary">Add Category</a>
 
         <br /><br /><br />
 
@@ -83,50 +83,48 @@
                     $featured = $row['featured'];
                     $active = $row['active'];
 
-   ?>
+                    ?>
 
-      <tr>
-        <td><?php echo $co++; ?>. </td>
-        <td><?php echo $title; ?></td>
-        <td>
-   <?php
-     if($image_name!="")
-      {
-    ?>
-        <img src="../images/category/<?php echo $image_name; ?>" width="100px" >
-          <?php var_dump($image_name);?>
+                    <tr>
+                        <td><?php echo $co++; ?>. </td>
+                        <td><?php echo $title; ?></td>
+                        <td>
+                            <?php
+                            if($image_name!="")
+                            {
+                                ?>
+                                <img src="../images/category/<?php echo $image_name; ?>" width="100px" >
+                                <?php
+                            }
+                            else
+                            {
+                                echo "<div class='error'>Image not Added.</div>";
+                            }
+                            ?>
 
-   <?php
-     }
-   else
-     {
-       echo "<div class='error'>Image not Added.</div>";
-     }
-   ?>
+                        </td>
 
-  </td>
+                        <td><?php echo $featured; ?></td>
+                        <td><?php echo $active; ?></td>
+                        <td>
+                            <a href="/order/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update Category</a>
+                            <a href="/order/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            }
+            else
+            {
+                ?>
 
-     <td><?php echo $featured; ?></td>
-     <td><?php echo $active; ?></td>
-     <td>
-       <a href="/order/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update Category</a>
-       <a href="/order/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
-     </td>
-    </tr>
-    <?php
-      }
-     }
-      else
-       {
-    ?>
+                <tr>
+                    <td colspan="6"><div class="error">No Category Added.</div></td>
+                </tr>
 
-     <tr>
-      <td colspan="6"><div class="error">No Category Added.</div></td>
-     </tr>
-
-  <?php
-    }
-  ?>
+                <?php
+            }
+            ?>
         </table>
     </div>
 
