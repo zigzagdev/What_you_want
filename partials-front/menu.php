@@ -16,7 +16,7 @@
     <div class="container">
         <div class="logo">
             <a href="#" title="Logo">
-                <img src="images/yamutya.jpg" alt="Restaurant Logo" class="img-responsive">
+                <img src="images/yamutya.jpg" alt="" class="img-responsive">
             </a>
         </div>
 
