@@ -33,10 +33,47 @@
   {
     while($row2=mysqli_num_rows($rec2))
      {
-
+       $id = $row2['id'];
+       $title = $row2['title'];
+       $price = $row2['price'];
+       $description = $row2['description'];
+       $image_name = $row2['image_name'];
+?>
+    <div class="food-menu-box">
+     <div class="food-menu-img">
+   <?php
+     if($image_name=="")
+      {
+        echo "<div class='error'>Image not Available.</div>";
+      }
+     else
+      {
+       ?>
+       <img src="/images/food/<?php echo $image_name ;?>" alt="" class="img-responsive img-curve">
+     <?php
+      }
+     ?>
+   </div>
+     <div class="food-menu-desc">
+      <h4><?php echo $title; ?></h4>
+      <p class="food-price">￥<?php echo $price; ?></p>
+      <p class="food-detail">
+    <?php echo $description ; ?>
+      </p>
+      <br>
+     <a href="/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+     </div>
+    </div>
+<?php
      }
   }
-
+else
+ {
+   echo "<div class='error'>Food is not available</div>";
+ }
 ?>
+  <div class="clearfix"></div>
   </div>
  </section>
+
+<?php include('partials-front/footer.php'); ?>
