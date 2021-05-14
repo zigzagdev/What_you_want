@@ -4,7 +4,7 @@
         <div class="container">
 
             <form action="food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
+                <input type="search" name="search" placeholder="Search for Foods.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
 
@@ -26,7 +26,7 @@
             <h2 class="text-center">Explore Foods</h2>
 
    <?php
-            $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 3";
+            $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 4";
             $rec = mysqli_query($connect, $sql);
             $count = mysqli_num_rows($rec);
 
@@ -49,7 +49,7 @@
          else
           {
    ?>
-         <img src="/images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
+         <img src="/images/category/<?php echo $image_name; ?>" alt="" class="img-responsive img-curve">
    <?php
           }
    ?>
@@ -98,14 +98,14 @@
        else
         {
    ?>
-       <img src="/images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+       <img src="/images/food/<?php echo $image_name; ?>" alt="" class="img-responsive img-curve">
    <?php
          }
    ?>
            </div>
            <div class="food-menu-desc">
             <h4><?php echo $title; ?></h4>
-             <p class="food-price">$<?php echo $price; ?></p>
+             <p class="food-price">￥<?php echo $price; ?></p>
              <p class="food-detail">
                <?php echo $description; ?>
              </p>
@@ -127,7 +127,7 @@
     </div>
 
         <p class="text-center">
-            <a href="#">See All Foods</a>
+            <a href="foods.php">See All Foods</a>
         </p>
     </section>
 
