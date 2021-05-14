@@ -16,7 +16,7 @@ include('login-check.php');
 <div class="Menu text-center">
     <div class="wrapper">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/index.php">Home</a></li>
             <li><a href="manage-admin.php">Manager</a></li>
             <li><a href="manage-category.php">Category</a></li>
             <li><a href="manage-food.php">Food</a></li>

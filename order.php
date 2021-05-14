@@ -4,13 +4,13 @@
  if(isset($_GET['food_id']))
   {
     $food_id=$_GET['food_id'];
-      $sql = "SELECT * FROM tbl_food WHERE ";
+      $sql = "SELECT * FROM tbl_food WHERE id=$food_id";
       $rec = mysqli_query($connect, $sql);
       $count = mysqli_num_rows($rec);
 
    if($count==1)
     {
-     $row=mysqli_num_rows($rec);
+     $row=mysqli_fetch_assoc($rec);   //Get the Data from Database
      $title=$row['title'];
      $price=$row['price'];
      $image_name=$row['image_name'];

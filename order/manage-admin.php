@@ -3,7 +3,7 @@
 <!--Main Section -->
 <div class="main">
     <div class="wrapper">
-        <h1>Manage Admin</h1>
+        <h1>Manage User</h1>
         <br/>
         <?php
          if(isset($_SESSION['add']))
@@ -41,7 +41,7 @@
         ?>
         <br/><br/>
        <!---button--->
-       <a href="add-admin.php" class="btn-primary">Add Admin</a>
+       <a href="add-admin.php" class="btn-primary">Add User</a>
         <br/><br/><br/>
        <table class="tbl-full">
         <tr>

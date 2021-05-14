@@ -94,7 +94,6 @@
       {
     ?>
         <img src="../images/category/<?php echo $image_name; ?>" width="100px" >
-          <?php var_dump($image_name);?>
 
    <?php
      }

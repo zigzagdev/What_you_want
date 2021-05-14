@@ -7,7 +7,7 @@
 
    $sql="SELECT title FROM tbl_category WHERE id=$category_id";
    $rec=mysqli_query($connect,$sql);
-   $row=mysqli_num_rows($rec);
+   $row=mysqli_fetch_assoc($rec);
    $category_title=$row['title'];
   }
  else
@@ -18,7 +18,7 @@
 
   <section class="food-search text-center">
     <div class="container">
-   <h2>Foods on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
+   <h2>Foods on<a href="#" class="text-red">"<?php echo $category_title; ?>"</a></h2>
     </div>
   </section>
 
@@ -31,7 +31,7 @@
   $count2=mysqli_num_rows($rec2);
  if($count2>0)
   {
-    while($row2=mysqli_num_rows($rec2))
+    while($row2=mysqli_fetch_assoc($rec2))
      {
        $id = $row2['id'];
        $title = $row2['title'];
