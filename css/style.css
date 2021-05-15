@@ -91,7 +91,7 @@ fieldset{
 /* CSSS for navbar section */
 
 .logo{
-    width: 20%;
+    width: 18%;
     float: left;
 
 }
@@ -109,7 +109,7 @@ fieldset{
 }
 
 
-/* CSS for Food SEarch Section */
+/* CSS for Food Search Section */
 
 .food-search{
     background-image: url(../images/bg.jpg);
@@ -143,7 +143,7 @@ fieldset{
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: #ececec;
+    background-color: gray;
     padding: 4% 0;
 }
 .food-menu-box{
@@ -151,7 +151,7 @@ fieldset{
     margin: 1%;
     padding: 2%;
     float: left;
-    background-color: white;
+    background-color: #ececec;
     border-radius: 15px;
 }
 
@@ -190,7 +190,7 @@ fieldset{
 
 /* for Order Section */
 .order{
-    width: 50%;
+    width: 45%;
     margin: 0 auto;
 }
 .input-responsive{
@@ -262,4 +262,5 @@ fieldset{
     .order{
         width: 100%;
     }
+
 }

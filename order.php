@@ -41,7 +41,7 @@
     else
      {
  ?>
-     <img src="/images/food/<?php echo $image_name ?>" alt="">
+     <img src="/images/food/<?php echo $image_name ?>" alt="" class="img-responsive img-curve">
  <?php
      }
 ?>
@@ -50,7 +50,7 @@
      <div class="food-menu-desc">
        <h3><?php echo $title; ?></h3>
         <input type="hidden" name="food" value="<?php echo $title; ?>">
-      <p class="food-price">$<?php echo $price; ?></p>
+      <p class="food-price">￥<?php echo $price; ?></p>
         <input type="hidden" name="price" value="<?php echo $price; ?>">
      <div class="order-label">Quantity</div>
         <input type="number" name="quantity" class="input-responsive" value="1" required>
@@ -60,13 +60,13 @@
     <fieldset>
      <legend>Delivery Details</legend>
       <div class="order-label">Full Name</div>
-       <input type="text" name="full-name" placeholder="Matthew" class="input-responsive" required>
+       <input type="text" name="full-name" placeholder="Test Test" class="input-responsive" required>
       <div class="order-label">Phone Number</div>
        <input type="tel" name="contact" placeholder="090-1234-1234" class="input-responsive" required>
       <div class="order-label">Email</div>
         <input type="email" name="email" placeholder="1234aa@test.com" class="input-responsive" required>
       <div class="order-label">Address</div>
-        <textarea name="address" rows="10" placeholder=". Street, City, Country" class="input-responsive" required></textarea>
+        <textarea name="address" rows="5 " placeholder="" class="input-responsive" required></textarea>
         <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
     </fieldset>
    </form>
@@ -87,7 +87,7 @@
        $customer_email = $_POST['email'];
        $customer_address = $_POST['address'];
 
-       $sql2 = "INSERT INTO tbl_order SET food = '$food',price = $price,quantity = $quantity,total = $total,order_date = '$order_date',
+       $sql2 = "INSERT INTO tbl_orders SET food = '$food',price = $price,quantity = $quantity,total = $total,order_date = '$order_date',
                status = '$status',customer_name = '$customer_name',customer_contact = '$customer_contact',customer_email = '$customer_email',
                customer_address = '$customer_address'";
        $rec2=mysqli_query($connect,$sql2);
@@ -99,10 +99,16 @@
       else
        {
          $_SESSION['order'] = "<div class='error text-center'>Failed to Order Food.</div>";
-         header('location:'.SITEURL.'/index.php');
+         header('location:'.SITEURL.'/order.php');
        }
      }
   ?>
+
+      <a href="categories.php" class="btn btn-primary" >Move to Categories</a>
+
+      <a href="foods.php" class="btn btn-primary">Move to Foods</a>
+
+
     </div>
    </section>
 <?php include('partials-front/footer.php'); ?>
