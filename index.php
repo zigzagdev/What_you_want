@@ -40,7 +40,8 @@
    ?>
 
          <a href="category-foods.php?category_id=<?php echo $id; ?>">
-       <div class="box-3 float-container">
+          <br/><br/>
+       <div class="box-3 float-container" >
    <?php
          if($image_name=="")
           {

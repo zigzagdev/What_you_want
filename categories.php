@@ -2,7 +2,7 @@
 
   <section class="categories">
    <div class="container">
-    <h2 class="text-center">Explore Foods</h2>
+    <h2 class="text-center">Explore Foods Categories.</h2>
  <?php
    $sql="SELECT * FROM tbl_category WHERE active='Yes'";
    $rec=mysqli_query($connect,$sql);

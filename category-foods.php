@@ -18,9 +18,10 @@
 
   <section class="food-search text-center">
     <div class="container">
-   <h2>Foods on<a href="#" class="text-red">"<?php echo $category_title; ?>"</a></h2>
+   <h2>Foods on<a href="" class="text-red">"<?php echo $category_title; ?>"</a></h2><?php var_dump($category_id);?>
     </div>
   </section>
+
 
  <section class="food-menu">
   <div class="container">
