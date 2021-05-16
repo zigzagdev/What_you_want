@@ -38,7 +38,7 @@
 
    <div class="col-4 text-center">
  <?php
-      $sql3="SELECT * FROM tbl_orders";
+      $sql3="SELECT * FROM tbl_order";
       $rec3=mysqli_query($connect,$sql3);
       $count3=mysqli_num_rows($rec3);
  ?>
@@ -49,14 +49,14 @@
 
    <div class="col-4 text-center">
  <?php
-      $sql4 = "SELECT SUM(total) AS Total FROM tbl_orders WHERE status='Delivered'";
+      $sql4 = "SELECT SUM(total) AS Total FROM tbl_order WHERE status='Delivered'";
       $rec4 = mysqli_query($connect, $sql4);
       $row4 = mysqli_fetch_assoc($rec4);
       $total_revenue = $row4['Total'];
  ?>
      <h1>¥<?php echo $total_revenue; ?></h1>
     <br />
-         Revenue Generated
+         Total Generated
      </div>
 
     <div class="clearfix"></div>
