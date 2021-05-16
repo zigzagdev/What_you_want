@@ -32,7 +32,7 @@
         <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
     <form action="" method="POST" class="order">
      <fieldset>
-      <legend>Selected Food</legend>
+      <legend class="text-white">Selected Food</legend>
          <div class="food-menu-img">
  <?php
     if($image_name=="")
@@ -49,25 +49,25 @@
   </div>
 
      <div class="food-menu-desc">
-       <h3><?php echo $title; ?></h3>
-        <input type="hidden" name="food" value="<?php echo $title; ?>">
-      <p class="food-price">¥<?php echo $price; ?></p>
+       <h3 class="text-white"><?php echo $title; ?></h3>
+        <input type="hidden" name="food"  value="<?php echo $title; ?>">
+      <p class="food-price text-white" >¥<?php echo $price; ?></p>
         <input type="hidden" name="price" value="<?php echo $price; ?>">
-     <div class="order-label">Quantity</div>
+     <div class="order-label text-azure">Quantity</div>
         <input type="number" name="quantity" class="input-responsive" value="1" required>
      </div>
     </fieldset>
 
     <fieldset>
-     <legend>Delivery Details</legend>
-      <div class="order-label">Full Name</div>
+     <legend class="text-white">Delivery Details</legend>
+      <div class="order-label text-white" >Full Name</div>
        <input type="text" name="full-name" placeholder="Test Test" class="input-responsive" required>
-      <div class="order-label">Phone Number</div>
+      <div class="order-label text-white">Phone Number</div>
        <input type="tel" name="contact" placeholder="090-1234-1234" class="input-responsive" required>
-      <div class="order-label">Email</div>
+      <div class="order-label text-white">Email</div>
         <input type="email" name="email" placeholder="1234aa@test.com" class="input-responsive" required>
-      <div class="order-label">Address</div>
-        <textarea name="address" rows="5 " placeholder="" class="input-responsive" required></textarea>
+      <div class="order-label text-white">Address</div>
+        <textarea name="address" rows="5 " class="input-responsive" required></textarea>
         <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
     </fieldset>
    </form>
@@ -83,48 +83,45 @@
 
          $total = $price * $quantity;
 
-         $order_date = date("Y-m-d h:i:sa");
+         $order_date = date("Y/m/d H:i:s");
 
          $status = "Ordered";
 
          $customer_name = $_POST['full-name'];
          $customer_contact = $_POST['contact'];
          $customer_contact_boolean="/\A[0-9]{2,4}-[0-9]{2,4}-[0-9]{3,4}\z/";
-         if(preg_match($customer_contact_boolean,$customer_contact))
-         {
-
-         }
-         else
+         if(!preg_match($customer_contact_boolean,$customer_contact))
          {
              print $customer_contact.'is not correct!';
          }
          $customer_email = $_POST['email'];
          $contents_mail='/¥A\w\-\.]+¥@[\w\-\.]+.([a-z]+)\z/';
          if(preg_match($contents_mail,$customer_email))
-         {
+          {
              print 'write down your email correctly ! ';
-         }
+          }
          else
-         {
-         }
+          {
+              //
+          }
          $customer_address = $_POST['address'];
 
 
          $sql2 = "INSERT INTO tbl_order SET 
-            food = '$food',
-           price = $price,
-        quantity = $quantity,
-           total = $total,
-      order_date = '$order_date',
-          status = '$status',
-   customer_name = '$customer_name',
-customer_contact = '$customer_contact',
-  customer_email = '$customer_email',
-customer_address = '$customer_address' ";
+                        food = '$food',
+                        price = '$price',
+                        quantity = '$quantity',
+                        total = '$total',
+                        order_date = '$order_date',
+                        status = '$status',
+                        customer_name = '$customer_name',
+                        customer_contact = '$customer_contact',
+                        customer_email = '$customer_email',
+                        customer_address = '$customer_address'
+                    ";
 
-//  echo $sql2; die();
+     $rec2=mysqli_query($connect,$sql2) or die(mysqli_error($connect));
 
-     $rec2=mysqli_query($connect,$sql2);
       if($rec2==true)
        {
          $_SESSION['order'] = "<div class='success text-center'>Food Ordered Successfully.</div>";
@@ -136,11 +133,12 @@ customer_address = '$customer_address' ";
          header('location:'.SITEURL.'/index.php');
        }
      }
-
   ?>
-        <a href="categories.php" class="btn btn-primary" >Move to Categories</a>
 
+     <div class="order-button" style="text-align: center;">
+      <a href="categories.php" class="btn btn-primary"  >Move to Categories</a>
       <a href="foods.php" class="btn btn-primary">Move to Foods</a>
+     </div>
 
     </div>
    </section>

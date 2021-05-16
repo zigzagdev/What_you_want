@@ -17,7 +17,7 @@
 
         <table class="tbl-full">
          <tr>
-          <th>S.N.</th>
+          <th>O.N</th>
           <th>Food</th>
           <th>Price</th>
           <th>Quantity.</th>
@@ -36,7 +36,7 @@
          $rec=mysqli_query($connect,$sql);
          $count=mysqli_num_rows($rec);
 
-         $fo=1;
+         $on=1;
         if($count>0)
          {
            while($row=mysqli_fetch_assoc($rec))
@@ -46,15 +46,16 @@
               $price = $row['price'];
               $quantity = $row['quantity'];
               $total = $row['total'];
+              $order_date = $row['order_date'];
               $status = $row['status'];
               $customer_name = $row['customer_name'];
               $customer_contact = $row['customer_contact'];
               $customer_email = $row['customer_email'];
               $customer_address = $row['customer_address'];
-              $order_date = $row['order_date'];
+
       ?>
         <tr>
-          <td><?php echo $sn++; ?>.</td>
+          <td><?php echo $on++; ?>.</td>
           <td><?php echo $food; ?></td>
           <td><?php echo $price; ?></td>
           <td><?php echo $quantity; ?></td>

@@ -267,7 +267,9 @@ fieldset{
     }
     .order{
         width: 100%;
-
+    }
+    .text-yellow{
+        color: yellow;
     }
 
 }
