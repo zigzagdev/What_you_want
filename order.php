@@ -24,6 +24,7 @@
   {
       header('location:'.SITEURL.'/index.php');
   }
+
 ?>
 
 <section class="food-search">
@@ -50,7 +51,7 @@
      <div class="food-menu-desc">
        <h3><?php echo $title; ?></h3>
         <input type="hidden" name="food" value="<?php echo $title; ?>">
-      <p class="food-price">￥<?php echo $price; ?></p>
+      <p class="food-price">¥<?php echo $price; ?></p>
         <input type="hidden" name="price" value="<?php echo $price; ?>">
      <div class="order-label">Quantity</div>
         <input type="number" name="quantity" class="input-responsive" value="1" required>
@@ -71,26 +72,59 @@
     </fieldset>
    </form>
 
+
   <?php   //CHeck whether submit button is clicked or not
+
     if(isset($_POST['submit']))
      {
-       $food = $_POST['food'];
-       $price = $_POST['price'];
-       $quantity = $_POST['quantity'];
+         $food = $_POST['food'];
+         $price = $_POST['price'];
+         $quantity = $_POST['quantity'];
 
-       $total = $price * $quantity;
-       $order_date=date("Y-m-d h:i:sa");
-       $status= "Ordered!";
+         $total = $price * $quantity;
 
-       $customer_name = $_POST['full-name'];
-       $customer_contact = $_POST['contact'];
-       $customer_email = $_POST['email'];
-       $customer_address = $_POST['address'];
+         $order_date = date("Y-m-d h:i:sa");
 
-       $sql2 = "INSERT INTO tbl_orders SET food = '$food',price = $price,quantity = $quantity,total = $total,order_date = '$order_date',
-               status = '$status',customer_name = '$customer_name',customer_contact = '$customer_contact',customer_email = '$customer_email',
-               customer_address = '$customer_address'";
-       $rec2=mysqli_query($connect,$sql2);
+         $status = "Ordered";
+
+         $customer_name = $_POST['full-name'];
+         $customer_contact = $_POST['contact'];
+         $customer_contact_boolean="/\A[0-9]{2,4}-[0-9]{2,4}-[0-9]{3,4}\z/";
+         if(preg_match($customer_contact_boolean,$customer_contact))
+         {
+
+         }
+         else
+         {
+             print $customer_contact.'is not correct!';
+         }
+         $customer_email = $_POST['email'];
+         $contents_mail='/¥A\w\-\.]+¥@[\w\-\.]+.([a-z]+)\z/';
+         if(preg_match($contents_mail,$customer_email))
+         {
+             print 'write down your email correctly ! ';
+         }
+         else
+         {
+         }
+         $customer_address = $_POST['address'];
+
+
+         $sql2 = "INSERT INTO tbl_order SET 
+            food = '$food',
+           price = $price,
+        quantity = $quantity,
+           total = $total,
+      order_date = '$order_date',
+          status = '$status',
+   customer_name = '$customer_name',
+customer_contact = '$customer_contact',
+  customer_email = '$customer_email',
+customer_address = '$customer_address' ";
+
+  echo $sql2; die();
+
+     $rec2=mysqli_query($connect,$sql2);
       if($rec2==true)
        {
          $_SESSION['order'] = "<div class='success text-center'>Food Ordered Successfully.</div>";
@@ -99,15 +133,14 @@
       else
        {
          $_SESSION['order'] = "<div class='error text-center'>Failed to Order Food.</div>";
-         header('location:'.SITEURL.'/order.php');
+         header('location:'.SITEURL.'/index.php');
        }
      }
-  ?>
 
-      <a href="categories.php" class="btn btn-primary" >Move to Categories</a>
+  ?>
+        <a href="categories.php" class="btn btn-primary" >Move to Categories</a>
 
       <a href="foods.php" class="btn btn-primary">Move to Foods</a>
-
 
     </div>
    </section>

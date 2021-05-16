@@ -32,7 +32,7 @@
                     <a href="../foods.php">Foods</a>
                 </li>
                 <li>
-                    <a href="https://github.com/Msts-O">Contact</a>
+                    <a href="../order/index.php">Contact</a>
                 </li>
             </ul>
         </div>
