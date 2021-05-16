@@ -28,6 +28,12 @@
 .text-white{
  color: white;
 }
+.text-black{
+ color: black;
+}
+.text-azure{
+  color: azure;
+}
 .clearfix{
  clear: both;
 }
@@ -62,14 +68,14 @@ h2{
 }
 h3{
     font-size: 1.5rem;
+    text-align: center;
 }
 .float-container{
     position: relative;
 }
 .float-text{
-    position: absolute;
-    bottom: 50px;
-    left: 40%;
+    bottom: 70px;
+
 }
 fieldset{
     border: 1px solid white;
