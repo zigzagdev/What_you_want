@@ -32,7 +32,7 @@
          </tr>
 
       <?php
-         $sql = "SELECT * FROM tbl_orders";
+         $sql = "SELECT * FROM tbl_order";
          $rec=mysqli_query($connect,$sql);
          $count=mysqli_num_rows($rec);
 

@@ -122,7 +122,7 @@ customer_contact = '$customer_contact',
   customer_email = '$customer_email',
 customer_address = '$customer_address' ";
 
-  echo $sql2; die();
+//  echo $sql2; die();
 
      $rec2=mysqli_query($connect,$sql2);
       if($rec2==true)
