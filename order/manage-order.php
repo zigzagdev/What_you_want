@@ -46,12 +46,12 @@
               $price = $row['price'];
               $quantity = $row['quantity'];
               $total = $row['total'];
-              $order_date = $row['order_date'];
               $status = $row['status'];
               $customer_name = $row['customer_name'];
               $customer_contact = $row['customer_contact'];
               $customer_email = $row['customer_email'];
               $customer_address = $row['customer_address'];
+              $order_date = $row['order_date'];
       ?>
         <tr>
           <td><?php echo $sn++; ?>.</td>

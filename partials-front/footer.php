@@ -11,7 +11,10 @@
                 <a href="#"><img src="../images/icon/twitter.png" width="50px"/></a>
             </li>
             <li>
-                <a href="#"><img src="../images/icon/ubereats.png" width="50px"/></a>
+                <a href="#"><img src="../images/icon/ApplePay.png" width="50px"/></a>
+            </li>
+            <li>
+                <a href="#"><img src="../images/icon/Google_play.png" width="50px"/></a>
             </li>
         </ul>
     </div>

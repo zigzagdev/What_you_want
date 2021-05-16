@@ -3,7 +3,7 @@
 <!--Main Section -->
 <div class="main">
     <div class="wrapper">
-        <h1>Manage Admin</h1>
+        <h1>Manage User</h1>
         <br/>
         <?php
          if(isset($_SESSION['add']))
@@ -41,7 +41,7 @@
         ?>
         <br/><br/>
        <!---button--->
-       <a href="add-admin.php" class="btn-primary">Add Admin</a>
+       <a href="add-admin.php" class="btn-primary">Add User</a>
         <br/><br/><br/>
        <table class="tbl-full">
         <tr>
@@ -75,9 +75,9 @@
                <td><?php echo $full_name; ?></td>
                <td><?php echo $username; ?></td>
                <td>
-                <a href="<?php echo SITEURL; ?>/order/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
-                <a href="<?php echo SITEURL; ?>/order/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                <a href="<?php echo SITEURL; ?>/order/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                <a href="/order/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
+                <a href="/order/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
+                <a href="/order/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                 </td>
               </tr>
                <?php
