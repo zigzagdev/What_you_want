@@ -1,8 +1,6 @@
 <!--Footer Section -->
-<div class="footer">
-    <div class="wrapper">
+  <div class="footer">
         <p class="text-center">Everything is reserved ! Created by <a href="#">Matthew</p>
-    </div>
-</div>
+　</div>
 <!--footer Section -->
 

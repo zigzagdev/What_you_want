@@ -1,7 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
+<div class="main2">
     <div class="wrapper">
+     <div class="inner">
   <h1>Update Order</h1>
     <br/><br/>
  <?php
@@ -52,7 +53,7 @@
      <tr>
       <td>Quantity:</td>
       <td>
-       <input type="text" name="price" value="<?php echo $price; ?>">
+       <input type="text" name="price" value="<?php echo $quantity; ?>">
       </td>
      </tr>
 
@@ -78,7 +79,7 @@
      <tr>
       <td>Customer Contact: </td>
       <td>
-       <input type="text" name="customer_name" value="<?php echo $customer_name; ?>">
+       <input type="text" name="customer_name" value="<?php echo $customer_contact; ?>">
       </td>
      </tr>
 
@@ -146,6 +147,7 @@
       }
     }
  ?>
+   </div>
   </div>
  </div>
 <?php include('partials/footer.php'); ?>

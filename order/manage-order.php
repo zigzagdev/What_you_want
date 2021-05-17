@@ -1,9 +1,10 @@
 <?php include('partials/menu.php'); ?>
 
     <!--Main Section -->
-    <div class="main">
-        <div class="wrapper">
-            <h1>Manage Order</h1>
+  <div class="main">
+   <div class="wrapper">
+    <div class="inner">
+     <h1>Manage Order</h1>
          <br/><br/><br/>
 
      <?php
@@ -87,7 +88,7 @@
           <td><?php echo $customer_email; ?></td>
           <td><?php echo $customer_address; ?></td>
           <td>
-           <a href="order/update-orders.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
+           <a href="update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
           </td>
          </tr>
 
@@ -99,7 +100,8 @@
         echo "<tr><td colspan='12' class='error'>Orders not Available</td></tr>";
        }
       ?>
-        </div>
-    </div>
+     </div>
+   </div>
+  </div>
     <!--Main Section -->
 <?php include('partials/footer.php') ?>

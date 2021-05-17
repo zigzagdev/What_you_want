@@ -2,7 +2,8 @@
 
 <!--Main Section -->
 <div class="main">
-    <div class="wrapper">
+  <div class="wrapper">
+   <div class="inner">
         <h1>Manage Food</h1>
     <br/><br/>
 
@@ -79,8 +80,8 @@
        }
      ?>
       </table>
-
     </div>
+  </div>
 </div>
 <!--Main Section -->
 <?php include('partials/footer.php') ?>

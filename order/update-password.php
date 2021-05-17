@@ -1,7 +1,8 @@
 <?php include ('partials/menu.php'); ?>
 
-<div class="main-content">
+<div class="main2">
   <div class="wrapper">
+   <div class="inner">
    <h1>Change Passeword</h1>
     <br/><br/>
  <?php
@@ -38,6 +39,7 @@
      </tr>
    </table>
    </form>
+   </div>
   </div>
 </div>
 

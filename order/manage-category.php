@@ -1,7 +1,8 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
+<div class="main">
     <div class="wrapper">
+     <div class="inner">
         <h1>Manage Category</h1>
 
         <br /><br />
@@ -128,7 +129,7 @@
   ?>
         </table>
     </div>
-
+  </div>
 </div>
 
 <?php include('partials/footer.php'); ?>

@@ -21,10 +21,10 @@
      header('location:order/manage-food.php');
    }
 ?>
-
-<div class="main">
- <div class="wrapper">
-   <h1>Update Food</h1>
+<div class="main2">
+    <div class="wrapper">
+        <div class="inner">
+   <h1 class="text-azure">Update Food</h1>
      <br/><br/>
 
    <form action="" method="POST" enctype="multipart/form-data">
@@ -37,9 +37,9 @@
     </tr>
 
     <tr>
-     <td>Description: </td>
+     <td >Description: </td>
      <td>
-      <textarea name="description" cols="30" rows="6"><?php echo $description; ?></textarea>
+      <textarea name="description" cols="30" rows="6" ><?php echo $description; ?></textarea>
      </td>
     </tr>
 
@@ -129,8 +129,8 @@
       <input type="submit" name="submit" value="Update Food" class="btn-secondary">
      </td>
     </tr>
-   </table>
-  </form>
+  </table>
+   </form>
 
   <?php
     if(isset($_POST['submit']))
@@ -199,6 +199,7 @@
     }
   }
   ?>
+  </div>
  </div>
 </div>
 <?php include('partials/footer.php'); ?>
