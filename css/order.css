@@ -120,12 +120,11 @@ table tr td{
 .footer{
   background-color: red;
   color: white;
-  height:35px;
+  height:45px;
   width:100%;
 　position: fixed;
   bottom: 0;
   padding: 10px;
-  left: 0;
 }
 
 /*/CSS*/

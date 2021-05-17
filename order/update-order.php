@@ -53,7 +53,7 @@
      <tr>
       <td>Quantity:</td>
       <td>
-       <input type="text" name="price" value="<?php echo $quantity; ?>">
+       <input type="number" name="quantity" value="<?php echo $quantity; ?>">
       </td>
      </tr>
 
@@ -79,7 +79,7 @@
      <tr>
       <td>Customer Contact: </td>
       <td>
-       <input type="text" name="customer_name" value="<?php echo $customer_contact; ?>">
+       <input type="text" name="customer_contact" value="<?php echo $customer_contact; ?>">
       </td>
      </tr>
 
@@ -112,7 +112,7 @@
 
    if(isset($_POST['submit']))
     {
-       $food =$_POST['food'];
+       $id=$_POST['id'];
        $price =$_POST['price'];
        $quantity =$_POST['quantity'];
        $total =$price * $quantity;
@@ -122,9 +122,7 @@
        $customer_email =$_POST['customer_email'];
        $customer_address=$_POST['customer_address'];
 
-      $sql2 = "INSERT INTO tbl_order SET 
-               food = '$food',
-              price = $price,
+      $sql2 = "UPDATE tbl_order SET 
            quantity = $quantity,
               total = $total,
              status = '$status',
@@ -142,7 +140,7 @@
       }
      else
       {
-        $_SESSION['update'] = "<div class='error'>Order Updated Successfully.</div>";
+        $_SESSION['update'] = "<div class='error'>Order Updated failed.</div>";
         header('location:/order/manage-order.php');
       }
     }

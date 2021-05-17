@@ -14,26 +14,25 @@
            unset($_SESSION['update']);
          }
      ?>
-       <br/><br/>
 
-        <table class="tbl-full">
-         <tr>
-          <th>O.N</th>
-          <th>Food</th>
-          <th>Price</th>
-          <th>Quantity.</th>
-          <th>Total</th>
-          <th>Order Date</th>
-          <th>Status</th>
-          <th>Customer Name</th>
-          <th>Contact</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Actions</th>
-         </tr>
+     <table class="tbl-full">
+      <tr>
+       <th>O.N</th>
+       <th>Food</th>
+       <th>Price</th>
+       <th>Quantity.</th>
+       <th>Total</th>
+       <th>Order Date</th>
+       <th>Status</th>
+       <th>Customer Name</th>
+       <th>Contact</th>
+       <th>Email</th>
+       <th>Address</th>
+       <th>Actions</th>
+      </tr>
 
-      <?php
-         $sql = "SELECT * FROM tbl_order";
+  <?php
+         $sql = "SELECT * FROM tbl_order ORDER BY id DESC";
          $rec=mysqli_query($connect,$sql);
          $count=mysqli_num_rows($rec);
 
@@ -54,7 +53,7 @@
               $customer_email = $row['customer_email'];
               $customer_address = $row['customer_address'];
 
-      ?>
+    ?>
         <tr>
           <td><?php echo $on++; ?>.</td>
           <td><?php echo $food; ?></td>
@@ -69,7 +68,7 @@
               {
                 echo "<label>$status</label>";
               }
-             if($status=="On delivered")
+             if($status=="On delivery")
               {
                 echo "<label style='color: orchid'>$status</label>";
               }
@@ -100,6 +99,7 @@
         echo "<tr><td colspan='12' class='error'>Orders not Available</td></tr>";
        }
       ?>
+     </table>
      </div>
    </div>
   </div>
