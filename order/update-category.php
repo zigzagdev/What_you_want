@@ -1,8 +1,9 @@
 <?php include('partials/menu.php'); ?>
 
-    <div class="main-content">
-        <div class="wrapper">
-            <h1>Update Category</h1>
+  <div class="main2">
+   <div class="wrapper">
+    <div class="inner">
+    <h1>Update Category</h1>
 
             <br><br>
 <?php
@@ -158,5 +159,5 @@
  ?>
         </div>
     </div>
-
+  </div>
 <?php include('partials/footer.php'); ?>

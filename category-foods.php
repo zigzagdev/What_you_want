@@ -18,7 +18,7 @@
 
   <section class="food-search text-center">
     <div class="container">
-   <h2>Foods on<a href="" class="text-red">"<?php echo $category_title; ?>"</a></h2><?php var_dump($category_id);?>
+   <h2 class="text-white">Foods on<a href="" class="text-white">"<?php echo $category_title; ?>"</a></h2>
     </div>
   </section>
 
@@ -27,7 +27,7 @@
   <div class="container">
    <h2 class="text-center">Food Menu</h2>
 <?php
-  $sql2="SELECT * FROM tbl_food WHERE category_id=$category_id";
+  $sql2="SELECT * FROM tbl_food WHERE category_id=$category_id && active='Yes'&& featured='Yes'";
   $rec2=mysqli_query($connect, $sql2);
   $count2=mysqli_num_rows($rec2);
  if($count2>0)

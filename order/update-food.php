@@ -6,7 +6,7 @@
        $id=$_GET['id'];
        $sql2="SELECT * FROM tbl_food WHERE id=$id";
        $rec2 = mysqli_query($connect, $sql2);
-       $row2=mysqli_num_rows($rec2);
+       $row2=mysqli_fetch_assoc($rec2);
 
        $title = $row2['title'];
        $description = $row2['description'];
@@ -21,10 +21,10 @@
      header('location:order/manage-food.php');
    }
 ?>
-
-<div class="main">
- <div class="wrapper">
-   <h1>Update Food</h1>
+<div class="main2">
+    <div class="wrapper">
+        <div class="inner">
+   <h1 class="text-azure">Update Food</h1>
      <br/><br/>
 
    <form action="" method="POST" enctype="multipart/form-data">
@@ -37,9 +37,9 @@
     </tr>
 
     <tr>
-     <td>Description: </td>
+     <td >Description: </td>
      <td>
-      <textarea name="description" cols="30" rows="6"><?php echo $description; ?></textarea>
+      <textarea name="description" cols="30" rows="6" ><?php echo $description; ?></textarea>
      </td>
     </tr>
 
@@ -129,10 +129,11 @@
       <input type="submit" name="submit" value="Update Food" class="btn-secondary">
      </td>
     </tr>
-   </table>
-  </form>
+  </table>
+   </form>
 
   <?php
+
     if(isset($_POST['submit']))
      {
        $id = $_POST['id'];
@@ -199,6 +200,7 @@
     }
   }
   ?>
+  </div>
  </div>
 </div>
 <?php include('partials/footer.php'); ?>

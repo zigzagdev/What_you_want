@@ -64,8 +64,6 @@
            <?php
           }
         ?>
-          <option value="1">Food</option>
-          <option value="2">Snacks</option>
       </select>
      </td>
     </tr>

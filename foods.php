@@ -16,7 +16,7 @@
         <h2 class="text-center">Food Menu</h2>
 
   <?php
-        $sql = "SELECT * FROM tbl_food WHERE active='Yes'";
+        $sql = "SELECT * FROM tbl_food WHERE active='Yes'&& featured='Yes'";
         $rec=mysqli_query($connect, $sql);
         $count = mysqli_num_rows($rec);
       if($count>0)

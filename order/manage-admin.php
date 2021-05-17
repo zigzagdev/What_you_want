@@ -2,7 +2,8 @@
 
 <!--Main Section -->
 <div class="main">
-    <div class="wrapper">
+ <div class="wrapper">
+  <div class="inner">
         <h1>Manage User</h1>
         <br/>
         <?php
@@ -91,6 +92,7 @@
         ?>
        </table>
     </div>
+ </div>
 </div>
 <!--Main Section -->
 

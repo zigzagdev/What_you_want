@@ -28,6 +28,12 @@
 .text-white{
  color: white;
 }
+.text-black{
+ color: black;
+}
+.text-azure{
+  color: azure;
+}
 .clearfix{
  clear: both;
 }
@@ -62,14 +68,14 @@ h2{
 }
 h3{
     font-size: 1.5rem;
+    text-align: center;
 }
 .float-container{
     position: relative;
 }
 .float-text{
-    position: absolute;
-    bottom: 50px;
-    left: 40%;
+    bottom: 70px;
+
 }
 fieldset{
     border: 1px solid white;
@@ -112,7 +118,7 @@ fieldset{
 /* CSS for Food Search Section */
 
 .food-search{
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/icon/resort.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -244,7 +250,7 @@ fieldset{
     }
     .box-3{
         width: 100%;
-        margin: 4% auto;
+        margin: 5% auto;
     }
 
     .food-menu{
@@ -261,7 +267,9 @@ fieldset{
     }
     .order{
         width: 100%;
-
+    }
+    .text-yellow{
+        color: yellow;
     }
 
 }
