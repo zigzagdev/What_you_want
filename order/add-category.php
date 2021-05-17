@@ -44,7 +44,7 @@
     </tr>
 
     <tr>
-       <td>Active :</td>
+       <td>Active :</td>     <?php  //Active is sell or not ?>
        <td>
            <input type="radio" name="active" value="Yes"> Yes
            <input type="radio" name="active" value="No"> No

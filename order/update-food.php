@@ -6,7 +6,7 @@
        $id=$_GET['id'];
        $sql2="SELECT * FROM tbl_food WHERE id=$id";
        $rec2 = mysqli_query($connect, $sql2);
-       $row2=mysqli_num_rows($rec2);
+       $row2=mysqli_fetch_assoc($rec2);
 
        $title = $row2['title'];
        $description = $row2['description'];
@@ -133,6 +133,7 @@
    </form>
 
   <?php
+
     if(isset($_POST['submit']))
      {
        $id = $_POST['id'];
