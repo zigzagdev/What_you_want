@@ -13,7 +13,7 @@
      $sql="SELECT * FROM tbl_order WHERE id=$id";
      $rec=mysqli_query($connect,$sql);
      $count=mysqli_num_rows($rec);
-    if($count>0)
+    if($count==1)
      {
        $row=mysqli_fetch_assoc($rec);
 
@@ -129,7 +129,8 @@
       customer_name = '$customer_name',
    customer_contact = '$customer_contact',
      customer_email = '$customer_email',
-   customer_address = '$customer_address' ";
+   customer_address = '$customer_address' 
+            where id= $id";
 
       $rec2=mysqli_query($connect,$sql2);
 
