@@ -28,13 +28,11 @@ jobs:
           paths:
             - node_modules
 
-      - run: sudo php artisan key:generate
-
-      - run: ./vendor/bin/phpunit tests/
+#      - run: ./vendor/bin/phpunit tests/
 
 
 
-      - run: ssh -o "StrictHostKeyChecking=no" $SSH_USER@$SSH_HOST "~/deploy.sh"
+#      - run: ssh -o "StrictHostKeyChecking=no" $SSH_USER@$SSH_HOST "~/deploy.sh"
 
 workflows:
   version: 2
