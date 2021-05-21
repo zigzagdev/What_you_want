@@ -31,9 +31,6 @@
                 <li>
                     <a href="../foods.php">Foods</a>
                 </li>
-                <li>
-                    <a href="../purchase/manage-customer.php">Purchase</a>
-                </li>
             </ul>
         </div>
 
