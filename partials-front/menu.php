@@ -32,7 +32,7 @@
                     <a href="../foods.php">Foods</a>
                 </li>
                 <li>
-                    <a href="../order/index.php">Contact</a>
+                    <a href="../purchase/manage-customer.php">Purchase</a>
                 </li>
             </ul>
         </div>

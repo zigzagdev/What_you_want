@@ -22,7 +22,7 @@
 
 <section class="footer">
     <div class="container text-center">
-        <p>All rights reserved. Designed By <a href="https://github.com/Msts-O">Matthew</a></p>
+        <p>All rights reserved. Designed By <a href="../order/login.php">Matthew</a></p>
     </div>
 </section>
 
