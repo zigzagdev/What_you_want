@@ -28,11 +28,8 @@ jobs:
           paths:
             - node_modules
 
-#      - run: ./vendor/bin/phpunit tests/
+      - run: ./vendor/composer/phpunit tests/
 
-
-
-#      - run: ssh -o "StrictHostKeyChecking=no" $SSH_USER@$SSH_HOST "~/deploy.sh"
 
 workflows:
   version: 2
