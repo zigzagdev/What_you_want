@@ -4,7 +4,7 @@
 <section class="food-search text-center">
     <div class="container">
 
-     <form action="/food-search.php" method="POST">
+     <form action="/customer/food-search.php" method="POST">
       　<input type="search" name="search" placeholder="Search for Food.." required>
         <input type="submit" name="submit" value="Search" class="btn btn-primary">
      </form>
@@ -52,7 +52,7 @@
          <?php echo $description; ?>
           </p>
        <br>
-           <a href="/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+           <a href="/customer/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
              </div>
            </div>
   <?php

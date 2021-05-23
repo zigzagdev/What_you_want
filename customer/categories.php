@@ -1,9 +1,9 @@
-<?php include('partials-front/menu.php'); ?>
+<?php include('./partials-front/menu.php'); ?>
 
 <section class="food-search text-center">
     <div class="container">
 
-        <form action="/food-search.php" method="POST">
+        <form action="/customer/food-search.php" method="POST">
             　<input type="search" name="search" placeholder="Search for Food.." required>
             <input type="submit" name="submit" value="Search" class="btn btn-primary">
         </form>
@@ -26,7 +26,7 @@
          $title=$row['title'];
          $image_name=$row['image_name'];
  ?>　　
-       <a href="/category-foods.php?category_id=<?php echo $id; ?>">
+       <a href="/customer/category-foods.php?category_id=<?php echo $id; ?>">
          <div class="box-3 float-container">
       <?php
         if($image_name=="")
@@ -56,4 +56,4 @@
    </div>
   </section>
 
-<?php include('partials-front/footer.php')  ;?>
+<?php include('partials-front/footer.php');?>

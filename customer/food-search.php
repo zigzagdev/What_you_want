@@ -1,4 +1,4 @@
-<?php include('partials-front/menu.php') ; ?>
+<?php include('partials-front/menu.php'); ?>
 
 <section class="food-search text-center">
  <div class="container">
@@ -6,13 +6,13 @@
      $search=$_POST['search']
  ?>
 
-     <h2>Foods on Your Search <a href="#" class="text-red">"<?php echo $search; ?>"</a></h2>
+     <h2 class="text-white">Foods on Your Search <a href="#" class="text-red">"<?php echo $search; ?>"</a></h2>
  </div>
 </section>
 
 <section class="food-menu">
  <div class="container">
-  <h2 class="text-center">Food Menu</h2>
+  <h2 class="text-center text-white">Food Menu</h2>
 
  <?php
     $sql="SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
@@ -53,7 +53,7 @@
      <?php echo $description?>
        </p>
      <br>
-      <a href="/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+      <a href="/customer/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
      </div>
     </div>
  <?php
