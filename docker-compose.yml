@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  php:
+    image: php:7.2-apache
+    volumes:
+      - ./php.ini:/usr/local/php.ini
+      - ./html:/var/www/html
+    ports:
+      - 8080:80
+  mysql:
+    image: mysql:8.0.22
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=food_order
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD='root'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    links:
+      - mysql:db
+    ports:
+      - 4040:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
