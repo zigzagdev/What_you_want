@@ -54,7 +54,12 @@
       $row4 = mysqli_fetch_assoc($rec4);
       $total_revenue = $row4['Total'];
  ?>
-     <h1>¥<?php echo $total_revenue; ?></h1>
+     <h1>¥<?php  if($total_revenue==0){
+             echo 0;}else{
+         echo $total_revenue;
+         }
+ ?>
+     </h1>
     <br />
          Total Generated
      </div>

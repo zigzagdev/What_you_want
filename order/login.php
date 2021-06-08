@@ -32,7 +32,7 @@
      <input type="submit" name="submit" value="login" class="btn-primary">
         <br/><br/>
     </form>
-    <p class="text-center">Created by - <a href="www.matthew.com" >Matthew</a></p>
+    <p class="text-center">Created by - <a href="" >Matthew</a></p>
   </div>
  </body>
 </html>
@@ -51,12 +51,12 @@
     {
         $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
         $_SESSION['user'] = $username;      //特定のユーザーがログアウトしてるかしてないかの確認の為に置いてる
-        header('location:'.SITEURL.'/order');
+        header("location:" .SITEURL.'/order/manage-admin.php');
     }
     else
     {
         $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";
-        header('location:'.SITEURL.'order/login.php');
+        header("location:".SITEURL.'order/login.php');
     }
 }
 ?>

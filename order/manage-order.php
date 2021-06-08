@@ -20,7 +20,7 @@
        <th>O.N</th>
        <th>Food</th>
        <th>Price</th>
-       <th>Quantity.</th>
+       <th>Quantity</th>
        <th>Total</th>
        <th>Order Date</th>
        <th>Status</th>
@@ -66,15 +66,15 @@
            <?php
              if($status=="Ordered")
               {
-                echo "<label>$status</label>";
+                echo "<label style='color: #ed969e'>$status</label>";
               }
              if($status=="On delivery")
               {
-                echo "<label style='color: orchid'>$status</label>";
+                echo "<label style='color: azure'>$status</label>";
               }
              if($status=="Delivered")
               {
-                echo "<label style='color: lawngreen'>$status</label>";
+                echo "<label style='color: yellow'>$status</label>";
               }
              if($status=="Cancelled")
               {
