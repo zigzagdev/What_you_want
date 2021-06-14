@@ -16,20 +16,20 @@ if(isset($_GET['id']) AND ($_GET['image_name'])) {
     $sql = "DELETE FROM tbl_food WHERE id=$id";
     $rec = mysqli_query($connect, $sql);
     if ($rec == true)
-     {
+    {
         $_SESSION['delete'] = "<div class='success'>Delete is done.</div>";
         header('location: ' . SITEURL . '/order/manage-food.php');
-     }
+    }
     else
-     {
+    {
         $_SESSION['delete'] = "<div class='error'>Error in delete .</div>";
         header('location:' . SITEURL . '/order/manage-food.php ');
-     }
-   }
+    }
+}
 else
-     {
-        header('location:' . SITEURL . '/order/manage-food.php');
-     }
+{
+    header('location:' . SITEURL . '/order/manage-food.php');
+}
 
 ?>
 
