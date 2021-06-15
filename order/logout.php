@@ -1,6 +1,6 @@
 <?php
 include('../config/constants.php');
- session_destroy();
+session_destroy();
 
- header('location:'.SITEURL.'order/login.php');
+header('location:'.SITEURL.'order/login.php');
 ?>
