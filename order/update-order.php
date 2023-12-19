@@ -6,16 +6,14 @@
                 <h1>Update Order</h1>
                 <br/><br/>
                 <?php
-                if(isset($_GET['id']))
-                {
-                    $id=$_GET['id'];
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
 
-                    $sql="SELECT * FROM tbl_order WHERE id=$id";
-                    $rec=mysqli_query($connect,$sql);
-                    $count=mysqli_num_rows($rec);
-                    if($count==1)
-                    {
-                        $row=mysqli_fetch_assoc($rec);
+                    $sql = "SELECT * FROM tbl_order WHERE id=$id";
+                    $rec = mysqli_query($connect, $sql);
+                    $count = mysqli_num_rows($rec);
+                    if ($count == 1) {
+                        $row = mysqli_fetch_assoc($rec);
 
                         $food = $row['food'];
                         $price = $row['price'];
@@ -24,15 +22,11 @@
                         $customer_name = $row['customer_name'];
                         $customer_contact = $row['customer_contact'];
                         $customer_email = $row['customer_email'];
-                        $customer_address= $row['customer_address'];
-                    }
-                    else
-                    {
+                        $customer_address = $row['customer_address'];
+                    } else {
                         header('location:admin/manage-order.php');
                     }
-                }
-                else
-                {
+                } else {
                     header('location:admin/manage-order.php');
                 }
                 ?>
@@ -61,37 +55,49 @@
                             <td>Status</td>
                             <td>
                                 <select name="status">
-                                    <option <?php if($status=="Ordered"){echo "selected";} ?> value="Ordered">Ordered</option>
-                                    <option <?php if($status=="On Delivery"){echo "selected";} ?> value="On Delivery">On Delivery</option>
-                                    <option <?php if($status=="Delivered"){echo "selected";} ?> value="Delivered">Delivered</option>
-                                    <option <?php if($status=="Cancelled"){echo "selected";} ?> value="Cancelled">Cancelled</option>
+                                    <option <?php if ($status == "Ordered") {
+                                        echo "selected";
+                                    } ?> value="Ordered">Ordered
+                                    </option>
+                                    <option <?php if ($status == "On Delivery") {
+                                        echo "selected";
+                                    } ?> value="On Delivery">On Delivery
+                                    </option>
+                                    <option <?php if ($status == "Delivered") {
+                                        echo "selected";
+                                    } ?> value="Delivered">Delivered
+                                    </option>
+                                    <option <?php if ($status == "Cancelled") {
+                                        echo "selected";
+                                    } ?> value="Cancelled">Cancelled
+                                    </option>
                                 </select>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>Customer Name: </td>
+                            <td>Customer Name:</td>
                             <td>
                                 <input type="text" name="customer_name" value="<?php echo $customer_name; ?>">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>Customer Contact: </td>
+                            <td>Customer Contact:</td>
                             <td>
                                 <input type="text" name="customer_contact" value="<?php echo $customer_contact; ?>">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>Customer Email: </td>
+                            <td>Customer Email:</td>
                             <td>
                                 <input type="text" name="customer_email" value="<?php echo $customer_email; ?>">
                             </td>
                         </tr>
 
                         <tr>
-                            <td>Customer Address: </td>
+                            <td>Customer Address:</td>
                             <td>
                                 <input type="text" name="customer_address" value="<?php echo $customer_address; ?>">
                             </td>
@@ -110,17 +116,16 @@
 
                 <?php
 
-                if(isset($_POST['submit']))
-                {
-                    $id=$_POST['id'];
-                    $price =$_POST['price'];
-                    $quantity =$_POST['quantity'];
-                    $total =$price * $quantity;
-                    $status =$_POST['status'];
-                    $customer_name =$_POST['customer_name'];
-                    $customer_contact =$_POST['customer_contact'];
-                    $customer_email =$_POST['customer_email'];
-                    $customer_address=$_POST['customer_address'];
+                if (isset($_POST['submit'])) {
+                    $id = $_POST['id'];
+                    $price = $_POST['price'];
+                    $quantity = $_POST['quantity'];
+                    $total = $price * $quantity;
+                    $status = $_POST['status'];
+                    $customer_name = $_POST['customer_name'];
+                    $customer_contact = $_POST['customer_contact'];
+                    $customer_email = $_POST['customer_email'];
+                    $customer_address = $_POST['customer_address'];
 
                     $sql2 = "UPDATE tbl_order SET 
            quantity = $quantity,
@@ -132,15 +137,12 @@
    customer_address = '$customer_address' 
             where id= $id";
 
-                    $rec2=mysqli_query($connect,$sql2);
+                    $rec2 = mysqli_query($connect, $sql2);
 
-                    if($rec2==true)
-                    {
+                    if ($rec2 == true) {
                         $_SESSION['update'] = "<div class='success'>Order Updated Successfully.</div>";
                         header('location:/order/manage-order.php');
-                    }
-                    else
-                    {
+                    } else {
                         $_SESSION['update'] = "<div class='error'>Order Updated failed.</div>";
                         header('location:/order/manage-order.php');
                     }

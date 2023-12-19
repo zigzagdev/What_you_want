@@ -17,21 +17,24 @@ include('partials/menu.php'); ?>
                 <tr>
                     <td>Full Name:</td>
                     <td>
-                        <input type="text" name="full_name" placeholder="Enter your Name">
+                        <label for="full_name"></label>
+                        <input type="text" name="full_name" id="full_name" placeholder="Enter your Name">
                     </td>
                 </tr>
 
                 <tr>
                     <td>UserName:</td>
                     <td>
-                        <input type="text" name="user_name" placeholder="Enter your username">
+                        <label for="user_name"></label>
+                        <input type="text" name="user_name" id="user_name" placeholder="Enter your username">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Password:</td>
                     <td>
-                        <input type="password" name="password" placeholder="Enter your password">
+                        <label for="password"></label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password">
                     </td>
                 </tr>
                 <tr>

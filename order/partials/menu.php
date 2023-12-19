@@ -7,7 +7,6 @@ include('login-check.php');
 <html>
 <head>
     <title>Food Order Site</title>
-
     <link rel="stylesheet" href="../../css/order.css">
 </head>
 
@@ -26,4 +25,6 @@ include('login-check.php');
         </ul>
     </div>
 </div>
+</body>
+</html>
 <!--Menu Section -->

@@ -1,4 +1,4 @@
-<?php  include('partials/menu.php'); ?>
+<?php include('partials/menu.php'); ?>
 
     <div class="main2">
         <div class="wrapper">
@@ -7,21 +7,18 @@
                 <br/><br/>
 
                 <?php
-                $id=$_GET['id'];
-                $sql="SELECT * FROM tbl_admin WHERE id=$id";
-                $rec=mysqli_query($connect,$sql);
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM tbl_admin WHERE id=$id";
+                $rec = mysqli_query($connect, $sql);
 
-                if($rec==true)
-                {$count = mysqli_num_rows($rec);
-                    if ($count == 1)
-                    {
+                if ($rec == true) {
+                    $count = mysqli_num_rows($rec);
+                    if ($count == 1) {
                         $row = mysqli_fetch_assoc($rec);
                         $full_name = $row['full_name'];
                         $username = $row['username'];
-                    }
-                    else
-                    {
-                        header('location:'.SITEURL. '/order/update-admin.php');
+                    } else {
+                        header('location:' . SITEURL . '/order/update-admin.php');
                     }
                 }
                 ?>
@@ -56,8 +53,7 @@
     </div>
 
 <?php
-if(isset($_POST['submit']))
-{
+if (isset($_POST['submit'])) {
 
     $id = $_POST['id'];
     $full_name = $_POST['full_name'];
@@ -65,18 +61,15 @@ if(isset($_POST['submit']))
 
     $sql = "UPDATE tbl_admin SET full_name = '$full_name',username = '$username' WHERE id='$id' ";
 
-    $rec= mysqli_query($connect, $sql);
+    $rec = mysqli_query($connect, $sql);
 
-    if($rec==true)
-    {
+    if ($rec == true) {
         $_SESSION['update'] = "<div class='success'>Admin Updated Successfully.</div>";
-        header('location:'.SITEURL.'/order/manage-admin.php');
-    }
-    else
-    {
+        header('location:' . SITEURL . '/order/manage-admin.php');
+    } else {
         $_SESSION['update'] = "<div class='error'>Failed to Delete Admin.</div>";
-        header('location:'.SITEURL.'/order/manage-admin.php');
+        header('location:' . SITEURL . '/order/manage-admin.php');
     }
 }
 ?>
-<?php include ('partials/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

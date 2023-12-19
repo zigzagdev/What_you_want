@@ -8,8 +8,7 @@
                 <br/><br/><br/>
 
                 <?php
-                if(isset($_SESSION['update']))
-                {
+                if (isset($_SESSION['update'])) {
                     echo $_SESSION['update'];
                     unset($_SESSION['update']);
                 }
@@ -33,14 +32,12 @@
 
                     <?php
                     $sql = "SELECT * FROM tbl_order ORDER BY id DESC";
-                    $rec=mysqli_query($connect,$sql);
-                    $count=mysqli_num_rows($rec);
+                    $rec = mysqli_query($connect, $sql);
+                    $count = mysqli_num_rows($rec);
 
-                    $on=1;
-                    if($count>0)
-                    {
-                        while($row=mysqli_fetch_assoc($rec))
-                        {
+                    $on = 1;
+                    if ($count > 0) {
+                        while ($row = mysqli_fetch_assoc($rec)) {
                             $id = $row['id'];
                             $food = $row['food'];
                             $price = $row['price'];
@@ -64,20 +61,16 @@
 
                                 <td>
                                     <?php
-                                    if($status=="Ordered")
-                                    {
+                                    if ($status == "Ordered") {
                                         echo "<label style='color: #ed969e'>$status</label>";
                                     }
-                                    if($status=="On delivery")
-                                    {
+                                    if ($status == "On delivery") {
                                         echo "<label style='color: azure'>$status</label>";
                                     }
-                                    if($status=="Delivered")
-                                    {
+                                    if ($status == "Delivered") {
                                         echo "<label style='color: yellow'>$status</label>";
                                     }
-                                    if($status=="Cancelled")
-                                    {
+                                    if ($status == "Cancelled") {
                                         echo "<label style='color: slateblue'>$status</label>";
                                     }
                                     ?>
@@ -87,15 +80,14 @@
                                 <td><?php echo $customer_email; ?></td>
                                 <td><?php echo $customer_address; ?></td>
                                 <td>
-                                    <a href="update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
+                                    <a href="update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update
+                                        Order</a>
                                 </td>
                             </tr>
 
                             <?php
                         }
-                    }
-                    else
-                    {
+                    } else {
                         echo "<tr><td colspan='12' class='error'>Orders not Available</td></tr>";
                     }
                     ?>
