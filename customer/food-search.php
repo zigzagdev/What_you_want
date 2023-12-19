@@ -3,10 +3,12 @@
     <section class="food-search text-center">
         <div class="container">
             <?php
-            $search=$_POST['search']
+            $search = $_POST['search']
             ?>
 
-            <h2 class="text-white">Foods on Your Search <a href="#" class="text-red">"<?php echo $search; ?>"</a></h2>
+            <h2 class="text-white">Foods on Your Search
+                <a href="#" class="text-red">"<?php echo $search; ?>"</a>
+            </h2>
         </div>
     </section>
 
@@ -15,15 +17,12 @@
             <h2 class="text-center text-white">Food Menu</h2>
 
             <?php
-            $sql="SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
-            //  using %%, get the keywords.
-            $rec=mysqli_query($connect,$sql);
-            $count=mysqli_num_rows($rec);
+            $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
+            $rec = mysqli_query($connect, $sql);
+            $count = mysqli_num_rows($rec);
 
-            if($count>0)
-            {
-                while($row=mysqli_fetch_assoc($rec))
-                {
+            if ($count > 0) {
+                while ($row = mysqli_fetch_assoc($rec)) {
                     $id = $row['id'];
                     $title = $row['title'];
                     $price = $row['price'];
@@ -33,14 +32,12 @@
                     <div class="food-menu-box">
                         <div class="food-menu-img">
                             <?php
-                            if($image_name=="")
-                            {
-                                echo "<div class='error'>Image not Available</div>" ;
-                            }
-                            else
-                            {
+                            if ($image_name == "") {
+                                echo "<div class='error'>Image not Available</div>";
+                            } else {
                                 ?>
-                                <img src="/images/food/<?php echo $image_name; ?>" alt="" class="img-responsive img-curve">
+                                <img src="/images/food/<?php echo $image_name; ?>" alt=""
+                                     class="img-responsive img-curve">
                                 <?php
                             }
                             ?>
@@ -50,17 +47,16 @@
                             <h4><?php echo $title; ?></h4>
                             <p class="food-price">¥<?php echo $price; ?></p>
                             <p class="food-detail">
-                                <?php echo $description?>
+                                <?php echo $description ?>
                             </p>
                             <br>
-                            <a href="/customer/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                            <a href="/customer/order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order
+                                Now</a>
                         </div>
                     </div>
                     <?php
                 }
-            }
-            else
-            {
+            } else {
                 echo "<div class='error'>Food not found.</div>";
             }
             ?>

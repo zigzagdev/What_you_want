@@ -5,7 +5,8 @@
         <div class="container">
 
             <form action="/customer/food-search.php" method="POST">
-                　<input type="search" name="search" placeholder="Search for Food.." required>
+                <label for="search"></label>
+                　<input type="search" name="search" id="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
         </div>
